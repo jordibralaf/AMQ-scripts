@@ -1,8 +1,8 @@
 // ==UserScript==
 // @name         AMQ Busca el tonto
-// @namespace    https://github.com/jordibralaf/AMQ-scripts
+// @namespace    https://github.com/jordibralaf
 // @version      1.0
-// @description  Busca una persona aleatoria en la sala del amq y dice que es tonta
+// @description  Busca una persona aleatoria para ser el tonto
 // @author       Joordi25
 // @match        https://animemusicquiz.com/*
 // @grant        none
@@ -11,6 +11,7 @@
 if (!window.setupDocumentDone) return;
 
 let players = [];
+
 
 let commandListener = new Listener("Game Chat Message", (payload) => {
     if (payload.sender === selfName && payload.message.startsWith("/tonto")) {
