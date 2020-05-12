@@ -11,7 +11,6 @@
 if (!window.setupDocumentDone) return;
 
 let players = [];
-let playersPerTeam = 2;
 
 let commandListener = new Listener("Game Chat Message", (payload) => {
     if (payload.sender === selfName && payload.message.startsWith("/tonto")) {
