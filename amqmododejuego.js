@@ -58,10 +58,10 @@ function sendChatMessage(message) {
 commandListener.bindListener();
 
 AMQ_addScriptData({
-    name: "Buscando al tonto",
+    name: "Modo de juego aleatorio",
     author: "Joordi25",
     description: `
-        <p>Este script sirve para ver quien es el tonto de la sala</p>
+        <p>lol</p>
         <p>Escribe /tonto y elige alguien aleatorio</p>
     `
 })
