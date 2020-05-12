@@ -1,13 +1,14 @@
 // ==UserScript==
-// @name         AMQ Busca el tonto
+// @name         AMQ Modo de juego
 // @namespace    https://github.com/jordibralaf/AMQ-scripts
-// @version      1.0
-// @description  Busca una persona aleatoria en la sala del amq y dice que es tonta
+// @version      0.1
+// @description  try to take over the world!
 // @author       Joordi25
 // @match        https://animemusicquiz.com/*
 // @grant        none
-// @require      https://github.com/jordibralaf/AMQ-scripts/blob/master/amqbuscatonto.js
+// @require      https://raw.githubusercontent.com/jordibralaf/AMQ-scripts/master/amqmododejuego.js
 // ==/UserScript==
+
 if (!window.setupDocumentDone) return;
 
 let modo = [];
@@ -18,12 +19,12 @@ let commandListener = new Listener("Game Chat Message", (payload) => {
     if (payload.sender === selfName && payload.message.startsWith("/modo")) {
         if (lobby.inLobby) {
             let message = "";
-            sendChatMessage("Se est· decidiendo el modo de juego");
+            sendChatMessage("Se est√° decidiendo el modo de juego");
 
             shuffle(modo);
 
 
-                message += "Se jugar·n " + (modo[1]);
+                message += "Se jugar√°n " + (modo[1]);
 
                 sendChatMessage(message);
                 message = "";
@@ -47,7 +48,6 @@ function shuffle(array) {
         array[counter] = array[index];
         array[index] = temp;
     }
-    return array;
 }
 
 function sendChatMessage(message) {
