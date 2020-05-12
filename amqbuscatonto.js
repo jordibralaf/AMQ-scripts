@@ -1,9 +1,13 @@
 // ==UserScript==
-// @name         AMQ En busca del tonto
-// @description  Un script de AMQ que busca un jugador aleatorio para ser el tonto de la sala
+// @name         AMQ Busca el tonto
+// @namespace    https://github.com/jordibralaf/AMQ-scripts
+// @version      1.0
+// @description  Busca una persona aleatoria en la sala del amq y dice que es tonta
 // @author       Joordi25
 // @match        https://animemusicquiz.com/*
-
+// @grant        none
+// @require      https://github.com/jordibralaf/AMQ-scripts/blob/master/amqbuscatonto.js
+// ==/UserScript==
 if (!window.setupDocumentDone) return;
 
 let players = [];
