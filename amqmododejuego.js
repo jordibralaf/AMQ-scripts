@@ -1,54 +1,33 @@
 // ==UserScript==
-// @name         AMQ Modo de juego
-// @namespace    https://github.com/jordibralaf/AMQ-scripts
+// @name         Modo aleatorio
+// @namespace    http://tampermonkey.net/
 // @version      0.1
 // @description  try to take over the world!
-// @author       Joordi25
-// @match        https://animemusicquiz.com/*
+// @author       Joordi25/TheSpecialConan
+// @match        https://animemusicquiz.com/
 // @grant        none
-// @require      https://raw.githubusercontent.com/jordibralaf/AMQ-scripts/master/amqmododejuego.js
+// @require      https://raw.githubusercontent.com/TheJoseph98/AMQ-Scripts/master/common/amqScriptInfo.js
+// @require      https://raw.githubusercontent.com/TheJoseph98/AMQ-Scripts/master/common/amqWindows.js
 // ==/UserScript==
 
 if (!window.setupDocumentDone) return;
 
-let modo = [];
-modo = {openings, endings, inserts};
+
 
 
 let commandListener = new Listener("Game Chat Message", (payload) => {
-    if (payload.sender === selfName && payload.message.startsWith("/modo")) {
-        if (lobby.inLobby) {
+    if (payload.sender === selfName && payload.message.startsWith("/facha")) {
             let message = "";
-            sendChatMessage("Se está decidiendo el modo de juego");
-
-            shuffle(modo);
+            sendChatMessage("Buscando fachas...");
 
 
-                message += "Se jugarán " + (modo[1]);
+                message += "solo hay un facha y ese es @Jabro";
 
                 sendChatMessage(message);
                 message = "";
-
-
-            modo = [];
         }
-        else {
-            gameChat.systemMessage("Tienes que estar en la lobby para ejecutar este comando");
-        }
-    }
 });
 
-
-function shuffle(array) {
-    let counter = array.length;
-    while (counter > 0) {
-        let index = Math.floor(Math.random() * counter);
-        counter--;
-        let temp = array[counter];
-        array[counter] = array[index];
-        array[index] = temp;
-    }
-}
 
 function sendChatMessage(message) {
     gameChat.$chatInputField.val(message);
@@ -58,10 +37,9 @@ function sendChatMessage(message) {
 commandListener.bindListener();
 
 AMQ_addScriptData({
-    name: "Modo de juego aleatorio",
+    name: "facha",
     author: "Joordi25",
     description: `
-        <p>lol</p>
-        <p>Escribe /tonto y elige alguien aleatorio</p>
+        <p>Para generar aleatoriamente las canciones y los segundos utiliza el comando /modo</p>
     `
 })
