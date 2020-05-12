@@ -6,7 +6,7 @@
 // @author       Joordi25
 // @match        https://animemusicquiz.com/*
 // @grant        none
-// @require      https://github.com/jordibralaf/AMQ-scripts/blob/master/amqbuscatonto.js
+// @require      https://raw.githubusercontent.com/jordibralaf/AMQ-scripts/master/amqbuscatonto.js
 // ==/UserScript==
 if (!window.setupDocumentDone) return;
 
