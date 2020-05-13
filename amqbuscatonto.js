@@ -6,7 +6,7 @@
 // @author       Joordi25
 // @match        https://animemusicquiz.com/*
 // @grant        none
-// @require      https://raw.githubusercontent.com/jordibralaf/AMQ-scripts/master/amqbuscatonto.js
+// @require      https://raw.githubusercontent.com/TheJoseph98/AMQ-Scripts/master/common/amqScriptInfo.js
 // ==/UserScript==
 if (!window.setupDocumentDone) return;
 
@@ -24,7 +24,7 @@ let commandListener = new Listener("Game Chat Message", (payload) => {
                 players.push(lobby.players[playerId]._name);
             }
 
-            shuffle(players);
+            aleatorio(players);
 
 
                 message += "El tonto de la sala es... @" + (players[1]);
@@ -42,7 +42,7 @@ let commandListener = new Listener("Game Chat Message", (payload) => {
 });
 
 
-function shuffle(array) {
+function aleatorio(array) {
     let counter = array.length;
     while (counter > 0) {
         let index = Math.floor(Math.random() * counter);
@@ -51,7 +51,7 @@ function shuffle(array) {
         array[counter] = array[index];
         array[index] = temp;
     }
-    return array;
+    //return array;
 }
 
 function sendChatMessage(message) {
