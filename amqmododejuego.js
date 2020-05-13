@@ -20,9 +20,9 @@ let commandListener = new Listener("Game Chat Message", (payload) => {
             sendChatMessage("Se está decidiendo el modo de juego...");
 
 
-            shuffle(modo);
+            aleatorio(modo);
             let sec = segundosRandom(5,20);
-            let modo_aleatorio = shuffle(modo);
+            let modo_aleatorio = aleatorio(modo);
 
                 message += "se jugarán " + (modo_aleatorio) + " con " + sec + " segundos.";
 
@@ -37,7 +37,7 @@ let commandListener = new Listener("Game Chat Message", (payload) => {
 });
 
 
-function shuffle(array) {
+function aleatorio(array) {
     return array[Math.floor(Math.random() * array.length)];
     }
 
