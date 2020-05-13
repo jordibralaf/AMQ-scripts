@@ -58,6 +58,6 @@ AMQ_addScriptData({
     name: "Modo aleatorio",
     author: "Joordi25 & TheSpecialConan",
     description: `
-        <p>Poniendo el comando /modo se elegirá aleatoriamente un modo de jueg y los segundos con los que jugar.</p>
+        <p>Poniendo el comando /modo se elegirá aleatoriamente un modo de juego y los segundos con los que jugar.</p>
     `
 });
